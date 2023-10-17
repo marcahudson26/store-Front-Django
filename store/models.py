@@ -33,8 +33,6 @@ class Address(models.Model):
     
 
 
-class Collection (models.Model): 
-    title = models.CharField(max_length=255)
 
 class Order (models.Model):
     PAYMENT_STATUS_PENDING = "P"
@@ -50,6 +48,9 @@ class Order (models.Model):
     payment_status = models.CharField(max_length=1,choices= PAYMENT_STATUS_CHOICES, default=PAYMENT_STATUS_PENDING)
     customer =  models.ForeignKey(Customer,on_delete=models.PROTECT)
 
+class Collection (models.Model): 
+    title = models.CharField(max_length=255)
+    featured_product = models.ForeignKey("Product", on_delete=models.SET_NULL,null=True, related_name="+")
 
 class Product(models.Model):
     
@@ -60,6 +61,8 @@ class Product(models.Model):
     last_update= models.DateField(auto_now=True)
     collection=models.ForeignKey(Collection,on_delete=models.PROTECT)
     promotions = models.ManyToManyField(Promotion)
+    
+
     
     
 
