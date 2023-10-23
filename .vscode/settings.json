@@ -1,4 +1,9 @@
-// {
+{
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter"
+  },
+  "python.formatting.provider": "none"
+} // {
 //     "folders": {
 //         "path": "."
 //     },
@@ -6,6 +11,6 @@
 //     "settings":{
 //         "python.terminal.activateEnvInCurrentTerminal":true,
 //         "python.defaultInterpreterPath":"/c/Users/march/AppData/Local/Microsoft/WindowsApps/python3"
-        
+
 //     }
 // }
